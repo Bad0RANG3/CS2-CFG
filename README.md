@@ -1,3 +1,5 @@
+
+
 # 🎮 CS2 练习配置文件
 
 [🌐 English Version](README_EN.md)
@@ -38,10 +40,9 @@
 ---
 
 ## 📋 使用说明
-1. 将整个配置文件夹放入 `Counter-Strike Global Offensive` 目录
+1. 将整个配置文件夹放入 `Counter-Strike Global Offensive\game\csgo\cfg` 目录
 2. 启动游戏后通过控制台执行配置
 
 > 💡 提示：需在本地服务器/练习模式下生效
 
 ---
-
