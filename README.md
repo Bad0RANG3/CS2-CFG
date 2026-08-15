@@ -1,7 +1,7 @@
 # 🎮 CS2 练习配置（跑图模式）
 
 [![CS2](https://img.shields.io/badge/CS2-Counter%20Strike%202-orange)](https://www.counter-strike.net/)
-[![Version](https://img.shields.io/badge/version-2.0.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.0.1-blue)](CHANGELOG.md)
 [![Author](https://img.shields.io/badge/author-Bad0RANG3-9cf)](https://space.bilibili.com/482966540)
 
 > **为 CS2 跑图 / 练习量身打造的一整套配置文件**：练习服务器参数一键加载、投掷物轨迹与落点显示、出生点传送、刀型循环、地图指南（烟点/道具标注）……开箱即用。
@@ -140,8 +140,10 @@ CT1 / T3       ← ③ 输入 CT1~CT15 / T1~T15 传送
 
 地图指南是游戏内的**地图标注**——在跑图时直接显示烟雾弹、燃烧瓶等投掷物的**落点与瞄准参考**。
 
-- 输入 `guide` 打开菜单，再输入 `load_dust2` 等命令加载对应地图指南
+- **进图自动加载**：PT 配置已开启 `annotation_auto_load 1`，进入有指南的地图时自动显示，无需手动操作
+- **手动加载**：输入 `guide` 打开指南菜单，再输入 `load_dust2` 等命令；或直接输入 `annotation_load <地图名>`
 - **内置 7 张地图**：炙热沙城 II、炼狱小镇、荒漠迷城、核子危机、远古遗迹、阿努比斯、死亡游乐园
+- **使用前提**：必须通过游戏 UI 正常创建练习房间（开始游戏 → 练习）；用控制台 `map` 命令直接开图会导致标注加载失败（`Missing file` 报错）
 - 数据文件位于 `game/csgo/annotations/local/<地图名>/`，详见 [annotations/README.md](annotations/README.md)
 
 ---
@@ -194,6 +196,9 @@ alias "dao1" "subclass_create 515; alias dao dao2; say 已生成刀：蝴蝶刀"
 
 **Q：想练习连跳等进阶操作？**
 `PT.cfg` 参数区已使用官匹 VNL 参数，可在加载 PT 后自行追加 `sv_autobunnyhopping 1` 等指令（需要练习房间支持）。
+
+**Q：地图指南加载报 `Missing file` 错误？**
+请通过游戏 UI 正常创建练习房间（开始游戏 → 练习），不要用控制台 `map` 命令直接开图——后者会导致标注系统无法获取地图名。正常练习房内 `annotation_load` 与自动加载均正常。
 
 ---
 

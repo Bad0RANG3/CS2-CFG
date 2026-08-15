@@ -1,7 +1,7 @@
 # 🎮 CS2 Practice Configuration
 
 [![CS2](https://img.shields.io/badge/CS2-Counter%20Strike%202-orange)](https://www.counter-strike.net/)
-[![Version](https://img.shields.io/badge/version-2.0.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.0.1-blue)](CHANGELOG.md)
 [![Author](https://img.shields.io/badge/author-Bad0RANG3-9cf)](https://space.bilibili.com/482966540)
 
 > **A complete, ready-to-use configuration pack for CS2 practice / map studying**: one-command practice server setup, grenade trajectory & impact display, spawn teleportation, knife cycling, and in-game map guides (smoke/flash lineups).
@@ -137,8 +137,10 @@ CT1 / T3       ← ③ Teleport with CT1~CT15 / T1~T15
 
 Map guides are **in-game annotations** that show grenade **lineups and aim references** while you practice.
 
-- Type `guide` to open the menu, then `load_dust2` etc. to load a map's guide
+- **Auto-load on map entry**: the PT config enables `annotation_auto_load 1`, so guides appear automatically on maps that have them
+- **Manual load**: type `guide` for the menu, then `load_dust2` etc.; or directly `annotation_load <mapname>`
 - **7 maps bundled**: Dust II, Inferno, Mirage, Nuke, Ancient, Anubis, Overpass
+- **Requirement**: create the practice lobby through the game UI (Play → Practice). Starting a map with the console `map` command breaks annotation loading (`Missing file` error)
 - Data lives in `game/csgo/annotations/local/<map>/` — see [annotations/README.md](annotations/README.md)
 
 ---
@@ -188,6 +190,9 @@ Type `unbindbindings` to clear all config binds, then edit the bind in `PT.cfg`.
 
 **Q: `default` says unknown command?**
 Run `exec PT` first (aliases are defined there), or use `exec Default.cfg` directly.
+
+**Q: Map guides fail with a `Missing file` error?**
+Create the practice lobby through the game UI (Play → Practice) — starting a map with the console `map` command prevents the annotation system from resolving the map name. In a normal practice lobby both `annotation_load` and auto-load work fine.
 
 ---
 
