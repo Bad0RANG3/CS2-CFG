@@ -3,6 +3,14 @@
 本项目所有重要变更都会记录在此文件中。
 格式遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [2.0.2] - 2026-08-19
+
+### 🐛 修复（地图指南加载）
+
+- 修复“用配置加载地图指南只能加载 30 个节点 / 道具不显示”的问题：`PT.cfg` 新增 `sv_allow_annotations_access_level 2`（完整查看+编辑）与 `sv_annotation_limits_max_rounds_per_half -1`（解除半场前 5 回合限制）
+- `guides_menu.cfg` 的 7 个 `load_xxx` 命令现在会先强制设置完整权限（`sv_allow_annotations_access_level 2`）再执行 `annotation_load`，避免进图后游戏模式把权限重置回受限等级
+- 说明：竞技 / 回防模式对地图指南有 30 节点硬性上限（2026-03-18 更新规定），完整节点仅在【练习模式】下加载；建议通过游戏 UI（开始游戏 → 练习 → 练习模式 → 勾选“加载地图指南”）建房
+
 ## [2.0.1] - 2026-08-15
 
 ### 🐛 修复（地图指南加载）

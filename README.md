@@ -197,6 +197,9 @@ alias "dao1" "subclass_create 515; alias dao dao2; say 已生成刀：蝴蝶刀"
 **Q：想练习连跳等进阶操作？**
 `PT.cfg` 参数区已使用官匹 VNL 参数，可在加载 PT 后自行追加 `sv_autobunnyhopping 1` 等指令（需要练习房间支持）。
 
+**Q：用 `load_xxx` / `annotation_load` 加载地图指南只加载 30 个节点或加载不出来？**
+请使用**练习模式**建房（开始游戏 → 练习 → 练习模式，左侧勾选“加载地图指南”）。竞技/回防模式对地图指南有硬性限制（每半场前 5 回合、最多 30 个节点），无法通过配置解除；`PT.cfg` 与 `guides_menu.cfg` 已内置 `sv_allow_annotations_access_level 2` 与 `sv_annotation_limits_max_rounds_per_half -1`，在练习模式下可完整加载全部节点。
+
 **Q：地图指南加载报 `Missing file` 错误？**
 请通过游戏 UI 正常创建练习房间（开始游戏 → 练习），不要用控制台 `map` 命令直接开图——后者会导致标注系统无法获取地图名。正常练习房内 `annotation_load` 与自动加载均正常。
 
